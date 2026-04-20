@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     private Coach myCoach;
 
-    // define a constructor for dependency injection
+    // 可以隨便命名，反正是透過 Autowired 處理
     @Autowired
-    public DemoController(Coach theCoach) {
+    public void setCoach(Coach theCoach) {
         myCoach = theCoach;
     }
 
