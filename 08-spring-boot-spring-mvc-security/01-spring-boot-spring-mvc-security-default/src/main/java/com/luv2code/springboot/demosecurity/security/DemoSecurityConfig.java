@@ -39,8 +39,11 @@ public class DemoSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.authorizeHttpRequests(configurer ->
-                        configurer.
-                                anyRequest().authenticated()                // 要求所有 request 都要先過登入頁
+                        configurer
+                                .requestMatchers("/").hasRole("EMPLOYEE")
+                                .requestMatchers("/leaders/**").hasRole("MANAGER")
+                                .requestMatchers("/systems/**").hasRole("ADMIN")
+                                .anyRequest().authenticated()                // 要求所有 request 都要先過登入頁
                 )
                 .formLogin(form ->
                         form
