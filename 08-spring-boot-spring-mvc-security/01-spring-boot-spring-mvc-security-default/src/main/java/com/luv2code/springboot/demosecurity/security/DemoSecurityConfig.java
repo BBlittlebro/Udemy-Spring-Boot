@@ -47,6 +47,8 @@ public class DemoSecurityConfig {
                                 .loginPage("/showMyLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser") // Spring 會自動幫我抓，不用寫 Controller
                                 .permitAll()                                // 允許所有人訪問豋入頁
+                )
+                .logout(logout -> logout.permitAll()
                 );
 
         return http.build();
