@@ -52,6 +52,9 @@ public class DemoSecurityConfig {
                                 .permitAll()                                // 允許所有人訪問豋入頁
                 )
                 .logout(logout -> logout.permitAll()
+                )
+                .exceptionHandling(configuer ->
+                                configuer.accessDeniedPage("/access-denied")
                 );
 
         return http.build();
