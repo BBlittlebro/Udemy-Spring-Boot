@@ -23,9 +23,8 @@ public class Course {
 
     }
 
-    public Course(String title, Instructor instructorId) {
+    public Course(String title) {
         this.title = title;
-        this.instructor = instructorId;
     }
 
     public int getId() {
