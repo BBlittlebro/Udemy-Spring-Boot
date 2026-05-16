@@ -8,7 +8,9 @@ public interface AccountDAO {
 
     List<Account> findAccounts();
 
-    void addAccount(Account theAccountm, boolean vipFlag);
+    List<Account> findAccounts(boolean tripWire);
+
+    void addAccount(Account theAccount, boolean vipFlag);
 
     boolean doWork();
 
